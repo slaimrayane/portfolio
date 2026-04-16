@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink-950: #12100f;
+  --color-brand-100: #fff1df;
+  --color-brand-200: #f4c89b;
+  --color-brand-300: #d08757;
+  --color-brand-400: #9f5a34;
+}
+
+:root {
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #1f2937;
+  background: #f6f1ea;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.section-shell {
+  @apply mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:px-8;
+}
+
+.card-panel {
+  @apply rounded-3xl border border-amber-200/80 bg-white/90 p-6 text-slate-800 shadow-[0_16px_50px_-30px_rgba(30,20,10,0.28)] backdrop-blur;
+  @apply dark:border-slate-700/80 dark:bg-slate-900/80 dark:text-slate-100 dark:shadow-[0_20px_60px_-35px_rgba(0,0,0,0.75)];
+}
+
+.social-link {
+  @apply inline-flex items-center gap-2 rounded-full border border-amber-300 bg-white/85 px-4 py-2 text-sm font-medium text-slate-700 transition hover:border-brand-300 hover:text-brand-400;
+  @apply dark:border-slate-500 dark:bg-slate-900/65 dark:text-slate-100 dark:hover:text-brand-100;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-slate-700 dark:text-slate-200;
+}
+
+.form-input {
+  @apply mt-2 w-full rounded-xl border border-amber-300 bg-amber-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-300 focus:ring-2 focus:ring-brand-300/30;
+  @apply dark:border-slate-500 dark:bg-slate-950/70 dark:text-slate-100 dark:placeholder:text-slate-400;
+}
+
+.dark body {
+  background: #12100f;
+}
